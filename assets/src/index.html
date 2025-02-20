@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Static Website</title>
+</head>
+<body id="body" class="flex flex-col items-center justify-center min-h-screen bg-[#f5f5dc] text-black transition-colors duration-300">
+    <div class="text-center">
+        <img src="logo.png" alt="DFINITY logo" class="mx-auto w-1/2 md:w-1/2 lg:w-1/2 drop-shadow-lg hover:scale-110 transition-transform duration-300"/>
+
+        <h1 class="text-3xl font-bold mt-4 animate-pulse hover:scale-110">
+            Teknik Informatika PNJ 2024/2025
+        </h1>
+
+        <h1 class="text-3xl font-bold mt-4 animate-bounce hover:scale-110">
+            Terima kasih atas ilmunya &#128512;
+        </h1>
+
+        <!-- Tombol Toggle Mode -->
+        <button id="toggleMode" class="mt-6 px-6 py-2 rounded-lg shadow-lg bg-gray-700 text-white hover:bg-gray-900 transition-all duration-300">
+            Aktifkan Grey Mode
+        </button>
+    </div>
+
+    <script>
+        const body = document.getElementById("body");
+        const button = document.getElementById("toggleMode");
+
+        button.addEventListener("click", () => {
+            if (body.classList.contains("bg-[#f5f5dc]")) {
+                // Aktifkan Grey Mode
+                body.classList.remove("bg-[#f5f5dc]", "text-black");
+                body.classList.add("bg-gray-800", "text-white");
+                button.innerText = "Aktifkan White Mode";
+            } else {
+                // Aktifkan White Mode
+                body.classList.remove("bg-gray-800", "text-white");
+                body.classList.add("bg-[#f5f5dc]", "text-black");
+                button.innerText = "Aktifkan Grey Mode";
+            }
+        });
+    </script>
+</body>
+</html>
